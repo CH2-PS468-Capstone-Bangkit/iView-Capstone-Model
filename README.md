@@ -1,4 +1,4 @@
-# iView-Capstone-Application
+# iView-Capstone-Model
 
 Untuk melakukan upload ke repository Github sebagai berikut:
 ```
