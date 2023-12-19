@@ -1,5 +1,5 @@
 # # Import semua library yang dibutuhkan
-# import tensorflow as tf
+import tensorflow as tf
 from keras.preprocessing.image import ImageDataGenerator
 from keras import Sequential
 from keras.layers import InputLayer, Conv2D, MaxPool2D, Flatten, Dense, Dropout
@@ -93,4 +93,11 @@ model.fit(
 )
 
 # # Simpan model
+# CC
 model.save("result_model.h5")
+
+# MD
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = converter.convert()
+with open('result_model.tflite', 'wb') as f:
+    f.write(tflite_model)
